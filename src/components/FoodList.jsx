@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import foods from '../foods.json';
+import React from 'react';
 import FoodBox from './FoodBox';
 
-const FoodList = () => {
-  const [foodsData, setFoodsData] = useState(foods);
+const FoodList = (props) => {
+  const { foodsData } = props;
   return (
     <div>
       <p>Food List</p>
