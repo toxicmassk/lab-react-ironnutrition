@@ -21,9 +21,19 @@ function App() {
     console.log(searchResult);
     setUpdatedFoodsData(searchResult);
   };
+
+  const handleDelete = (foodName) => {
+    // prop drilling
+    let deleteResult = foodsData.filter((eachFood) => {
+      return eachFood.name.toLowerCase() !== foodName.toLowerCase();
+    });
+    console.log(deleteResult);
+    setUpdatedFoodsData(deleteResult);
+    setFoodsData(deleteResult);
+  };
   return (
     <div className="App">
-      <FoodList foodsData={updatedFoodsData} />
+      <FoodList foodsData={updatedFoodsData} handleDelete={handleDelete} />
       <AddFoodForm handleSubmit={handleSubmit} />
       <Search handleSearch={handleSearch} />
     </div>
