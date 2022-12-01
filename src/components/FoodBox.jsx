@@ -6,7 +6,7 @@ const FoodBox = (props) => {
   return (
     <div>
       <h1>{food.name}</h1>
-      <img src={food.image} alt={food.name} />
+      <img src={food.image} alt={food.name} width={200} />
       <span>Calories: {food.calories}</span>
       <span>Servings:{food.servings}</span>
       <b>Total Calories: {getTotalCalories()} kcal</b>
